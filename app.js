@@ -46,4 +46,4 @@ sqldb.sequelize
 });
 
 // API routes of our server
-app.use('/survey', require('./api/survey'));
+app.use('/', require('./api/survey'));

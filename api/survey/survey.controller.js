@@ -4,12 +4,14 @@ const sqldb = require('../../sqldb'),
 	config = require('../../config');
 
 module.exports.index = (req, res, next) => {
+	console.log(req.body);
 	for (let i = 1; i <= 20; i++) {
 		Survey.create({
 			age: req.body.age,
 			gender: req.body.gender,
 			question_id: i,
-			preference: questions[i]
+			preference: req.body['questions[' + i + ']']
 		});
 	}
+	res.redirect('http://milab.num.edu.mn/people/altangerelc/sudalgaa');
 };
